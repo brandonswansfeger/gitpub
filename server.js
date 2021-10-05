@@ -17,8 +17,10 @@ app.get("/drinks/", (req, res) => {
     })
   });
 
-  app.get("/drinks/:indexOfDrinksArray", (req, res) => {
-    res.render("show.ejs")
+  app.get("/drinks/:id", (req, res) => {
+    res.render("show.ejs", {
+        drink: drinks[req.params.id],
+    })
   })
 
   app.get("./", (req, res) => {
