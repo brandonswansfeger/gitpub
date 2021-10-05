@@ -7,17 +7,24 @@ const drinks = require("./models/drinks.js")
 
 
 
-app.get("./", (req, res) => {
-    res.send('Welcome to the gitpub app')
-  });
+
+
 
 
 app.get("/drinks/", (req, res) => {
-    res.render("index.ejs")
+    res.render("index.ejs", {
+        allDrinks: drinks,
+    })
   });
 
+  app.get("/drinks/:indexOfDrinksArray", (req, res) => {
+    res.render("show.ejs")
+  })
 
+  app.get("./", (req, res) => {
+    res.send('Welcome to the gitpub app')
+  });
 
-app.listen(port, () => {
+  app.listen(port, () => {
     console.log(`Express is listening on port:${port}`)
-});
+})
