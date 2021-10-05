@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config();
 
 const port = process.env.PORT;
-
+const drinks = require("./models/drinks.js")
 
 
 
@@ -12,6 +12,9 @@ app.get("./", (req, res) => {
   });
 
 
+app.get("/drinks/", (req, res) => {
+    res.send(drinks)
+  });
 
 
 
