@@ -7,18 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-  <!--Index-->
-    <h1>Welcome to Gitpub</h1>
-    <ul>
-        <% for(let i = 0; i <allDrinks.length; i++) { %>
-        <li>
-          <a href="/drinks/<%=i%>"><%=allDrinks[i].name %></a>
-        </li>
-        <% } %>
-      </ul>
-      <!--/Index-->
+    <%- include("views/Index.ejs")%>
+
+
+
+
+
 </body>
-<style>
+<<style>
     body {
     color: blanchedalmond;
     background-color: steelblue;
